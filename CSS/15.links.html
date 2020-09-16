@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CSS Links</title>
+<style>
+/* unvisited link */
+a:link {
+  color: red;
+  text-decoration: none;
+  background-color: cyan;
+}
+
+/* visited link */
+a:visited {
+  color: green;
+  text-decoration: none;
+  background-color: yellow;
+}
+
+/* mouse over link */
+a:hover {
+  color: hotpink;
+  text-decoration: underline;
+  background-color: green;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+  text-decoration: underline;
+  background-color: hotpink;
+} 
+  
+.button:link, .button:visited {
+  background-color: #f87565;
+  color: white;
+  padding: 14px 14px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+  
+.button:hover, .button:active {
+  background-color: red;  
+}
+</style>
+</head>
+<body>
+<p><b><a href="https://www.w3schools.com/css/css_link.asp" target="_blank">This is a link</a></b></p>
+<p><b>Note:</b> a:hover MUST come after a:link and a:visited in the CSS definition in order to be effective.</p>
+<p><b>Note:</b> a:active MUST come after a:hover in the CSS definition in order to be effective.</p>
+
+<h2>Link Button</h2>
+<p>A link styled as a button:</p>
+<a class="button" href="default.asp" target="_blank">This is a link</a>
+</body>
+</html>

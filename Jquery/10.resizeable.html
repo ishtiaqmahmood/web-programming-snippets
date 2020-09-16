@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jquery resizeable </title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/sunny/jquery-ui.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <style>
+    .bluebox {
+      background-color: #3A5795;
+      color: white;
+      height: 100px;
+      width: 300px;
+    }
+    .yellowbox {
+      background-color: rgb(222, 224, 85);
+      height: 100px;
+      width: 300px;
+    }
+    .greenbox {
+      background-color: #31af37;
+      height: 100px;
+      width: auto;
+    }
+    #container {
+      width: 300px;
+      height: 300px;
+      border-style: dotted;
+    }
+  </style>
+</head>
+<body>
+
+<div class="bluebox ui-corner-all" id="facebook">
+  <p>Facebook is <span id="great">great.</span></p>
+</div>
+
+<div id="container">
+  <div class="yellowbox ui-corner-all" id="apple">
+    <p>Apple</p>
+  </div>
+</div>
+
+
+<div class="greenbox ui-corner-all" id="microsoft">
+  <p id="microsoftpara">Microsoft</p>
+  <p><a href="http://www.microsoft.com" title="microsoft" id="microsoftlink">Microsoft</a></p>
+</div>
+
+
+
+<script>
+$(document).ready(function(){
+  $("#facebook").resizable({
+    maxHeight: 300,
+    minHeight: 100,
+    minWidth: 100,
+    maxWidth: 300,
+    aspectRatio: 4/3,
+    ghost: true,
+    alsoResize: "#microsoft"
+  });
+  
+  $("#apple").resizable({
+    containment: "#container",
+    animate: true
+    
+  });
+});
+</script>
+</body>
+</html>

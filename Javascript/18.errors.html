@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Errors - Throw and Try to Catch</title>
+</head>
+<body>
+<p>Please input a number between 5 and 10:</p>
+<input id="demo" type="text">
+<button type="button" onclick="myFunction()">Test Input</button>
+<p id="p01"></p>
+
+<script>
+function myFunction() {
+  var message, x;
+  message = document.getElementById("p01");
+  message.innerHTML = "";
+  x = document.getElementById("demo").value;
+  try {
+    if(x == "") throw "is empty";
+    if(isNaN(x)) throw "is not a number";
+    x = Number(x);
+    if(x > 10) throw "is too high";
+    if(x < 5) throw "is too low";
+  }
+  catch(err) {
+    message.innerHTML = "Input " + err;
+  }
+  finally {
+    x = "";
+  }
+}  
+</script>
+
+<script>
+// An EvalError indicates an error in the eval() function
+// A RangeError is thrown if you use a number that is outside the range of legal values
+var num = 1;
+try {
+  num.toPrecision(500);   // A number cannot have 500 significant digits
+}
+catch(err) {
+  document.getElementById("demo").innerHTML = err.name;
+}
+// A ReferenceError is thrown if you use (reference) a variable that has not been declared
+var x;
+try {
+  x = y + 1;   // y cannot be referenced (used)
+}
+catch(err) {
+  document.getElementById("demo").innerHTML = err.name;
+}
+// A SyntaxError is thrown if you try to evaluate code with a syntax error
+try {
+  eval("alert('Hello)");   // Missing ' will produce an error
+}
+catch(err) {
+  document.getElementById("demo").innerHTML = err.name;
+}
+// A TypeError is thrown if you use a value that is outside the range of expected types
+var num = 1;
+try {
+  num.toUpperCase();   // You cannot convert a number to upper case
+}
+catch(err) {
+  document.getElementById("demo").innerHTML = err.name;
+}
+// A URIError is thrown if you use illegal characters in a URI function
+try {
+  decodeURI("%%%");   // You cannot URI decode percent signs
+}
+catch(err) {
+  document.getElementById("demo").innerHTML = err.name;
+}
+
+</script>
+</body>
+</html>

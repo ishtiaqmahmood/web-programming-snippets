@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS String Properties</title>
+</head>
+<body>
+<p id="demo"></p>
+<script>
+var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+document.getElementById("demo").innerHTML = txt.length;
+  
+var str = "Please locate where 'locate' occurs!";
+var pos = str.indexOf("locate", 15);
+  
+var str = "Please locate where 'locate' occurs!";
+var pos = str.lastIndexOf("locate", 15);
+  
+var str = "Please locate where 'locate' occurs!";
+var pos = str.search("locate");
+  
+var str = "Apple, Banana, Kiwi";
+var res = str.slice(7, 13);
+  
+var str = "Apple, Banana, Kiwi";
+var res = str.substring(7, 13);
+  
+var str = "Apple, Banana, Kiwi";
+var res = str.substr(7, 6);
+  
+var str = "Please visit Microsoft!";
+var n = str.replace("Microsoft", "W3Schools");
+
+//To replace case insensitive, use a regular expression with an /i flag
+str = "Please visit Microsoft!";
+var n = str.replace(/MICROSOFT/i, "W3Schools");
+  
+// To replace all matches, use a regular expression with a /g
+str = "Please visit Microsoft and Microsoft!";
+var n = str.replace(/Microsoft/g, "W3Schools");
+  
+var text1 = "Hello World!";       // String
+var text2 = text1.toUpperCase();  // text2 is text1 converted to upper
+
+var text1 = "Hello World!";       // String
+var text2 = text1.toLowerCase();  // text2 is text1 converted to lower
+  
+var text1 = "Hello";
+var text2 = "World";
+var text3 = text1.concat(" ", text2);
+
+var text = "Hello" + " " + "World!";
+var text = "Hello".concat(" ", "World!");
+  
+var str = "       Hello World!        ";
+alert(str.trim());
+  
+var str = "HELLO WORLD";
+str.charAt(0);   
+  
+var str = "HELLO WORLD";
+
+str.charCodeAt(0); 
+
+// converting string to array
+var txt = "a,b,c,d,e";   // String
+txt.split(",");          // Split on commas
+txt.split(" ");          // Split on spaces
+txt.split("|");          // Split on pipe
+
+</script>
+</body>
+</html>

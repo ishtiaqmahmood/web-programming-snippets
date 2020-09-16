@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CSS Text</title>
+</head>
+<style>
+body {
+  background-color: azure;
+  
+}
+  
+div {
+  border: 1px solid grey;
+  padding: 8px;
+} 
+  
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 5px red;
+  color: #4CAF50;
+}
+
+p {
+  text-indent: 50px;
+  text-align: justify;
+  letter-spacing: 3px;
+  line-height: 1.8;
+  word-spacing: 10px;
+}
+  
+a {
+  text-decoration: none;
+  color: #008CBA;
+}
+.bdo {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+  text-align: center;
+  white-space: wrap;
+}
+</style>
+<body>
+<div>
+  <h1>text formatting</h1>
+  <p>This text is styled with some of the text formatting properties. The heading uses the text-align, text-transform, and color properties.
+  The paragraph is indented, aligned, and the space between characters is specified. The underline is removed from this colored
+  <a target="_blank" href="tryit.asp?filename=trycss_text">"Try it Yourself"</a> link.</p>
+  
+</div>
+<p class="bdo">This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. </p>
+</body>
+</html>

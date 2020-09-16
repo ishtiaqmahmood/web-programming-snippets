@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jquery change content</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <style>
+    .bluebox {
+      background-color: #3A5795;
+      color: white;
+      height: 100px;
+      width: auto;
+    }
+    .yellowbox {
+      background-color: rgb(222, 224, 85);
+      height: 100px;
+      width: auto;
+    }
+    .greenbox {
+      background-color: #31af37;
+      height: auto;
+      width: auto;
+    }
+  </style>
+</head>
+<body>
+<div class="bluebox" id="facebook">
+  <p>Facebook is <span id="great">great</span></p>
+</div>
+
+<div class="yellowbox" id="apple">
+  <p>Apple</p>
+</div>
+
+<div class="greenbox" id="microsoft">
+  <p id="microsoftpara">Microsoft</p>
+  <p><a href="http://www.microsoft.com" title="microsoft" id="microsoftlink">Microsoft</a></p>
+</div>
+
+<p>Enter your name: <input type="text"></p>
+
+<button id="changeFacebook">Change Facebook text</button>
+<button id="changeApple">Change Apple text</button>
+<button id="changeMicrosoft">Change Microsoft</button>
+<button id="changeInput">Change Input text</button>
+<button id="addText">Add Text</button>
+
+<script>
+$(document).ready(function(){
+  $("#changeFacebook").click(function(){
+   $("#facebook").text("This is facebook");
+  });
+  
+  $("#changeApple").click(function(){
+   $("#apple").html("<p>This is apple</p>");
+  });
+  
+  $("#changeMicrosoft").click(function(){
+   $("#microsoftlink").attr({"href" : "http://www.google.com", "title" : "Google"});
+  });
+  
+  $("#changeInput").click(function(){
+   $("input").val("book");
+  });
+  
+  //$("#addText").click(function(){
+    //$("#microsoft").append("<ul><li>BMW</li><li>Volvo</li><li>Mercedes</li></ul>");
+  //});
+  
+  //$("#addText").click(function(){
+    //$("#microsoft").prepend("<ul><li>BMW</li><li>Volvo</li><li>Mercedes</li></ul>");
+  //});
+  
+  $("#addText").click(function(){
+    $("#microsoftpara").after("<p>New Paragraph</p>");
+  });
+  
+});
+</script>
+</body>
+</html>

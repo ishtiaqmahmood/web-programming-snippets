@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CSS Attribute Selectors</title>
+<style>
+a[target] {
+  background-color: yellow;
+}
+a[target="_top"] {
+  background-color: cyan;
+}
+[title~="A"] {
+  border: 5px solid yellow;
+}
+[class|="top"] {
+  background: yellow;
+}
+[class^="top"] {
+  background: red;
+}
+[class$="test"] {
+  background: yellow;
+}
+[class*="te"] {
+  background: yellow;
+}
+</style>
+</head>
+<body>
+<p>The links with a target attribute gets a yellow background:</p>
+
+<a href="https://www.w3schools.com" title="A">w3schools.com</a>
+<a href="http://www.disney.com" target="_blank" title="B">disney.com</a>
+<a href="http://www.wikipedia.org" target="_top">wikipedia.org</a>
+
+<p><b>Note:</b> For [<i>attribute</i>] to work in IE8 and earlier, a DOCTYPE must be declared.</p>
+
+<h1 class="top-header">Welcome</h1>
+<p class="top-text">Hello world!</p>
+<p class="topcontent">Are you learning CSS?</p>
+
+<p><b>Note:</b> For [<i>attribute</i>|=<i>value</i>] to work in IE8 and earlier, a DOCTYPE must be declared.</p>
+
+<div class="first_test">The first div element.</div>
+<div class="second">The second div element.</div>
+<div class="my-test">The third div element.</div>
+<p class="mytest">This is some text in a paragraph.</p>
+</body>
+</html>

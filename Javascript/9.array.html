@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Array</title>
+</head>
+<body>
+<h2>JavaScript Arrays</h2>
+
+<p id="demo"></p>
+
+<script>
+// Creating array
+var cars = ["Saab", "Volvo", "BMW"];
+document.write(typeof(cars));
+// Accessing full array
+document.getElementById("demo").innerHTML = cars;
+</script>
+
+<p>JavaScript array elements are accessed using numeric indexes (starting from 0).</p>
+
+<p id="demo1"></p>
+
+<script>
+var cars = ["Saab", "Volvo", "BMW"];
+// Changing an element
+cars[0] = "Toyota";
+document.getElementById("demo1").innerHTML = cars[0];
+</script>
+
+
+<script>
+// Array Properties and Methods
+
+// The length Property
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.length;   // the length of fruits is 4
+  
+// Accessing the First Array Element
+fruits = ["Banana", "Orange", "Apple", "Mango"];
+var first = fruits[0];
+  
+// Accessing the Last Array Element
+fruits = ["Banana", "Orange", "Apple", "Mango"];
+var last = fruits[fruits.length - 1];
+  
+// Looping Array Elements
+var fruits, text, fLen, i;
+fruits = ["Banana", "Orange", "Apple", "Mango"];
+fLen = fruits.length;
+
+text = "<ul>";
+for (i = 0; i < fLen; i++) {
+  text += "<li>" + fruits[i] + "</li>";
+}
+text += "</ul>";
+  
+// Array.forEach() function
+var fruits, text;
+fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+text = "<ul>";
+fruits.forEach(myFunction);
+text += "</ul>";
+
+function myFunction(value) {
+  text += "<li>" + value + "</li>";
+}
+  
+// Adding Array Elements
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.push("Lemon");    // adds a new element (Lemon) to fruits
+  
+// New element can also be added to an array using the length property:
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits[fruits.length] = "Lemon";    // adds a new element (Lemon) to fruits
+  
+// How to Recognize an Array
+Array.isArray(fruits);   // returns true
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+fruits instanceof Array;  
+  
+// The JavaScript method toString() converts an array to a string of (comma separated) array values
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits.toString();
+
+// The join() method also joins all array elements into a string
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits.join(" * ");
+  
+// The pop() method removes the last element from an array
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.pop();              // Removes the last element ("Mango") from fruits
+  
+// The push() method adds a new element to an array (at the end)
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.push("Kiwi");       //  Adds a new element ("Kiwi") to fruits
+  
+// The push() method returns the new array length
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+var x = fruits.push("Kiwi");   //  the value of x is 5
+  
+// The shift() method removes the first array element and "shifts" all other elements to a lower index
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.shift();            // Removes the first element "Banana" from fruits
+  
+// The shift() method returns the string that was "shifted out"
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+var x = fruits.shift();    // the value of x is "Banana"
+  
+// The unshift() method adds a new element to an array (at the beginning), and "unshifts" older elements
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.unshift("Lemon");    // Adds a new element "Lemon" to fruits
+  
+// The unshift() method returns the new array length
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.unshift("Lemon");    // Returns 5
+  
+// Deleting Elements
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+delete fruits[0];           // Changes the first element in fruits to undefined
+  
+// The splice() method can be used to add new items to an array
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.splice(2, 0, "Lemon", "Kiwi");
+  
+// Using splice() to Remove Elements
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.splice(0, 1);        // Removes the first element of fruits
+  
+// Merging (Concatenating) Arrays
+var myGirls = ["Cecilie", "Lone"];
+var myBoys = ["Emil", "Tobias", "Linus"];
+var myChildren = myGirls.concat(myBoys);   // Concatenates (joins) myGirls and myBoys
+  
+// The slice() method slices out a piece of an array into a new array
+var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+var citrus = fruits.slice(1, 3);
+</script>
+
+<script>
+// The sort() method sorts an array alphabetically
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.sort();        // Sorts the elements of fruits
+  
+// The reverse() method reverses the elements in an array
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.sort();        // First sort the elements of fruits
+fruits.reverse();     // Then reverse the order of the elements
+  
+// For sorting numbers
+var points = [40, 100, 1, 5, 25, 10];
+points.sort(function(a, b){return a - b});
+// Use the same trick to sort an array descending
+var points = [40, 100, 1, 5, 25, 10];
+points.sort(function(a, b){return b - a});
+  
+// Sorting an Array in Random Order
+var points = [40, 100, 1, 5, 25, 10];
+points.sort(function(a, b){return 0.5 - Math.random()});
+
+
+// The Fisher Yates Method
+var points = [40, 100, 1, 5, 25, 10];
+
+for (i = points.length -1; i > 0; i--) {
+  j = Math.floor(Math.random() * i)
+  k = points[i]
+  points[i] = points[j]
+  points[j] = k
+}
+  
+// Finding max value in an array
+function myArrayMax(arr) {
+  var len = arr.length;
+  var max = -Infinity;
+  while (len--) {
+    if (arr[len] > max) {
+      max = arr[len];
+    }
+  }
+  return max;
+}
+  
+// Finding min value in an array
+function myArrayMin(arr) {
+  var len = arr.length;
+  var min = Infinity;
+  while (len--) {
+    if (arr[len] < min) {
+      min = arr[len];
+    }
+  }
+  return min;
+}
+</script>
+
+<script>
+// map
+var numbers1 = [45, 4, 9, 16, 25];
+var numbers2 = numbers1.map(myFunction);
+
+function myFunction(value, index, array) {
+  return value * 2;
+}
+
+// The filter() method creates a new array with array elements that passes a test
+var numbers = [45, 4, 9, 16, 25];
+var over18 = numbers.filter(myFunction);
+
+function myFunction(value, index, array) {
+  return value > 18;
+}
+  
+// The reduce() method runs a function on each array element to produce (reduce it to) a single value
+var numbers1 = [45, 4, 9, 16, 25];
+var sum = numbers1.reduce(myFunction);
+
+function myFunction(total, value) {
+  return total + value;
+}
+  
+// The reduce() method can accept an initial value
+var numbers1 = [45, 4, 9, 16, 25];
+var sum = numbers1.reduce(myFunction, 100);
+
+function myFunction(total, value) {
+  return total + value;
+}
+  
+// The reduceRight() method runs a function on each array element to produce (reduce it to) a single value
+var numbers1 = [45, 4, 9, 16, 25];
+var sum = numbers1.reduceRight(myFunction);
+
+function myFunction(total, value, index, array) {
+  return total + value;
+}
+  
+// The every() method check if all array values pass a test
+var numbers = [45, 4, 9, 16, 25];
+var allOver18 = numbers.every(myFunction);
+
+function myFunction(value, index, array) {
+  return value > 18;
+}
+  
+// The some() method check if some array values pass a test
+var numbers = [45, 4, 9, 16, 25];
+var someOver18 = numbers.some(myFunction);
+
+function myFunction(value, index, array) {
+  return value > 18;
+}
+  
+// The indexOf() method searches an array for an element value and returns its position
+var fruits = ["Apple", "Orange", "Apple", "Mango"];
+var a = fruits.indexOf("Apple");
+  
+// Array.lastIndexOf() is the same as Array.indexOf(), but returns the position of the last occurrence of the specified element
+var fruits = ["Apple", "Orange", "Apple", "Mango"];
+var a = fruits.lastIndexOf("Apple");
+  
+// The find() method returns the value of the first array element that passes a test function
+var numbers = [4, 9, 16, 25, 29];
+var first = numbers.find(myFunction);
+
+function myFunction(value, index, array) {
+  return value > 18;
+}
+  
+// The findIndex() method returns the index of the first array element that passes a test function
+var numbers = [4, 9, 16, 25, 29];
+var first = numbers.findIndex(myFunction);
+
+function myFunction(value, index, array) {
+  return value > 18;
+}
+  
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jquery datepicker </title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/sunny/jquery-ui.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <style>
+    .bluebox {
+      background-color: #3A5795;
+      color: white;
+      height: 100px;
+      width: auto;
+    }
+    .yellowbox {
+      background-color: rgb(222, 224, 85);
+      height: 100px;
+      width: auto;
+      padding: 10px;
+    }
+    .greenbox {
+      background-color: #31af37;
+      height: 100px;
+      width: auto;
+    }
+    .ui-autocomplete{
+      max-height: 100px;
+      overflow-y: auto;
+      overflow-x: auto;
+      max-width: 200px;
+    }
+    #city {
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="bluebox ui-corner-all" id="facebook">
+  <p>Flight departure date: <input  id="departure"></p>
+  <p>Flight return date: <input  id="return"></p>
+</div>
+
+<div class="yellowbox ui-corner-all" id="apple">
+  <p>Apple</p>
+</div>
+
+<div class="greenbox ui-corner-all" id="microsoft">
+  <p id="microsoftpara">Microsoft</p>
+  <p><a href="http://www.microsoft.com" title="microsoft" id="microsoftlink">Microsoft</a></p>
+</div>
+
+
+<script>
+$(document).ready(function(){
+  $("#departure").datepicker({
+    showAnim: "drop",
+    changeYear: true,
+    numberOfMonths: 2,
+    dateFormat: "d M, y",
+    showOn: "button",
+    //buttonImage: "images/calender.png",
+    //buttonImageOnly: true,
+    minDate: +1,
+    maxDate: "+12M +10D",
+    showWeek: true,
+    onClose: function(selectedDate){
+      $("#return").datepicker("option", "minDate", selectedDate);
+    }
+    
+  });
+  $("#return").datepicker({
+    dateFormat: "d M, y"
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS dates</title>
+</head>
+<body>
+<h2>JavaScript new Date()</h2>
+
+<p id="demo"></p>
+
+<script>
+var d = new Date();
+document.getElementById("demo").innerHTML = d;
+// When you display a date object in HTML, it is automatically converted to a string, with the toString() method
+document.getElementById("demo").innerHTML = d.toString();
+// The toUTCString() method converts a date to a UTC string (a date display standard)
+document.getElementById("demo").innerHTML = d.toUTCString();
+// The toDateString() method converts a date to a more readable format
+document.getElementById("demo").innerHTML = d.toDateString();
+// The toISOString() method converts a date to a string, using the ISO standard format
+document.getElementById("demo").innerHTML = d.toISOString();
+// Date.parse() returns the number of milliseconds between the date and January 1, 1970
+var msec = Date.parse("March 21, 2012");
+document.getElementById("demo").innerHTML = msec;
+
+</script>
+</body>
+</html>

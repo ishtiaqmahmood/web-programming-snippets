@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jquery select html elements </title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <style>
+    .bluebox {
+      background-color: #3A5795;
+      color: white;
+      height: 100px;
+      width: auto;
+    }
+    .yellowbox {
+      background-color: rgb(222, 224, 85);
+      height: 100px;
+      width: auto;
+    }
+    .greenbox {
+      background-color: #31af37;
+      height: auto;
+      width: auto;
+    }
+  </style>
+</head>
+<body>
+<div class="bluebox">
+  <p>Facebook is <span id="great">great</span></p>
+  <p class="orange">This is a paragraph</p>
+</div>
+<div class="yellowbox">
+  <p>Apple</p>
+  <p><a href="http://www.google.com" style="text-decoration: none">This is a link</a></p>
+  <p><a href="http://www.microsoft.com" style="text-decoration: none">This is another link</a></p>
+</div>
+<p>This is a paragraph</p>
+<p>This is a paragraph</p>
+<p>This is a paragraph</p>
+<p>This is a paragraph</p>
+<p>This is a paragraph</p>
+<div class="greenbox">
+  <p>Microsoft</p>
+  <ul>
+    <li>BMW</li>
+    <li>Audi</li>
+    <li>Mercedes</li>
+  </ul>
+  <table>
+    <tr><th>Company</th><th>Model</th><th>Ram</th></tr>
+    <tr><td>Apple</td><td>Iphone5</td><td>16gb</td></tr>
+    <tr><td>Apple</td><td>Iphone5</td><td>16gb</td></tr>
+    <tr><td>Apple</td><td>Iphone5</td><td>16gb</td></tr>
+    <tr><td>Apple</td><td>Iphone5</td><td>16gb</td></tr>
+    <tr><td>Apple</td><td>Iphone5</td><td>16gb</td></tr>
+  </table>
+</div>
+
+<p>Type your name: <input type="text"><button type="submit">Submit</button></p>
+
+<script>
+$(document).ready(function(){
+  $("*").css("font-size", '16px');
+  //$("p").css("text-align", "center");
+  //$("div > p").css("text-align","center");
+  //$("div ~ p").css("text-align","center");
+  //$("#great").css("background-color","#eb7f3c");
+  $(".orange").css("background-color","#FFA500");
+  $("div.bluebox").css("font-family","courier");
+  //$("p:first-child").css("text-decoration","underline");
+  //$("p:last-child").css("text-decoration","underline");
+  //$("p:last-child, p:last-child").css("text-decoration","underline");
+  //$("[href]").css("color","red");
+  //$("li:first-child, li:last-child").css("background-color","#bbf362");
+  $("tr:even").css("background-color","#e1d446");
+  $("tr:odd").css("background-color","#811c98");
+  $(":input").css("background-color","#1da492");
+  $(":submit").css("background-color","#1d6494");
+  $("div:has(table)").css("background-color","#1d6494");
+});  
+</script>
+</body>
+</html>

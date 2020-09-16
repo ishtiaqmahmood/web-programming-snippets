@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jquery dialog </title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/blitzer/jquery-ui.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <style>
+    .bluebox {
+      background-color: #3A5795;
+      color: white;
+      height: 100px;
+      width: auto;
+    }
+    .yellowbox {
+      background-color: rgb(222, 224, 85);
+      height: 100px;
+      width: auto;
+      padding: 10px;
+    }
+    .greenbox {
+      background-color: #31af37;
+      height: 100px;
+      width: auto;
+    }
+    .ui-autocomplete{
+      max-height: 100px;
+      overflow-y: auto;
+      overflow-x: auto;
+      max-width: 200px;
+    }
+    #city {
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="bluebox ui-corner-all" id="facebook">
+  <p>facebook</p>
+</div>
+
+<div class="yellowbox ui-corner-all" id="apple">
+  <p>Apple</p>
+</div>
+
+<div class="greenbox ui-corner-all" id="microsoft">
+  <p id="microsoftpara">Microsoft</p>
+  <p><a href="http://www.microsoft.com" title="microsoft" id="microsoftlink">Microsoft</a></p>
+</div>
+
+<div id="myDialog" title="This is a dialog">
+  <p>Welcome to our page.</p>
+</div>
+
+<div id="confirmation" title="Leave the page?">
+  <p><span class="ui-icon ui-icon-alert"></span>You will lose all unsaved work.Are you sure?</p>
+</div>
+<button id="open">Open Dialog</button>
+<button id="prevpage">Go to previous page</button>
+
+<script>
+$(document).ready(function(){
+  $("#myDialog").dialog({
+    autoOpen: false
+  });
+  $("#open").click(function(){
+    $("#myDialog").dialog("open")
+  });
+  $("button").button();
+  $("#confirmation").dialog({
+    autoOpen: false,
+    modal: true,
+    buttons: {
+      "Go to previous page" : function(){
+        window.history.back();
+      },
+      Cancel: function(){
+        $(this).dialog("close");
+      }
+    }
+  });
+  $("#prevpage").click(function(){
+    $("#confirmation").dialog("open");
+  });
+});
+</script>
+</body>
+</html>

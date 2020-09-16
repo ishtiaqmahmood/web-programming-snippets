@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jquery selectmenu </title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/blitzer/jquery-ui.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <style>
+    .bluebox {
+      background-color: #3A5795;
+      color: white;
+      height: 100px;
+      width: auto;
+    }
+    .yellowbox {
+      background-color: rgb(222, 224, 85);
+      height: 100px;
+      width: auto;
+      padding: 10px;
+    }
+    .greenbox {
+      background-color: #31af37;
+      height: 100px;
+      width: auto;
+    }
+  </style>
+</head>
+<body>
+
+<div class="bluebox ui-corner-all" id="facebook">
+  <p>Facebook</p>
+  <label for="strength">Select your biggest strength:</label>
+  <select name="strength" id="strength">
+    <option>Motivation</option>
+    <option selected="selected">Creativity</option>
+    <option>Curiosity</option>
+    <option>Integrity</option>
+    <option>Modesty</option>
+  </select>
+</div>
+
+<div class="yellowbox ui-corner-all" id="apple">
+  <p>Apple</p>
+</div>
+
+<div class="greenbox ui-corner-all" id="microsoft">
+  <p id="microsoftpara">Microsoft</p>
+  <p><a href="http://www.microsoft.com" title="microsoft" id="microsoftlink">Microsoft</a></p>
+</div>
+
+
+<script>
+$(document).ready(function(){
+  $("#strength").selectmenu();
+});
+</script>
+</body>
+</html>

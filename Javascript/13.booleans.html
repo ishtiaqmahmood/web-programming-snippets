@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Booleans</title>
+</head>
+<body>
+<p>Display the value of Boolean(10 > 9):</p>
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  document.getElementById("demo").innerHTML = Boolean(10 > 9)
+;}  
+  
+var x = 0;
+Boolean(x);       // returns false
+var x = -0;
+Boolean(x);       // returns false
+var x = "";
+Boolean(x);       // returns false
+var x;
+Boolean(x);       // returns false
+var x = null;
+Boolean(x);       // returns false
+var x = false;
+Boolean(x);       // returns false
+var x = 10 / "H";
+Boolean(x);       // returns false
+  
+var x = false;
+var y = new Boolean(false);
+
+// typeof x returns boolean
+// typeof y returns object
+
+var x = false;             
+var y = new Boolean(false);
+
+// (x === y) is false because x and y have different types
+  
+var x = new Boolean(false);             
+var y = new Boolean(false);
+
+// (x == y) is false because objects cannot be compared
+</script>
+</body>
+</html>

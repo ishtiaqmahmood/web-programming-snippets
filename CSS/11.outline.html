@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS Outline</title>
+<style>
+p {outline-color:red;}
+
+p.dotted {outline-style: dotted;}
+p.dashed {outline-style: dashed;}
+p.solid {outline-style: solid;}
+p.double {outline-style: double;}
+p.groove {outline-style: groove;}
+p.ridge {outline-style: ridge;}
+p.inset {outline-style: inset;}
+p.outset {outline-style: outset;}
+  
+p.ex1 {
+  border: 1px solid black;
+  outline-style: solid;
+  outline-width: thin;
+  outline-color: red;
+}
+
+p.ex2 {
+  border: 1px solid black;
+  outline-style: solid;
+  outline-width: medium;
+  outline-color: blue;
+}
+
+p.ex3 {
+  border: 1px solid black;
+  outline-style: solid;
+  outline-width: thick;
+  outline-color: green;
+}
+
+p.ex4 {
+  border: 1px solid black;
+  outline-style: solid;
+  outline-width: 4px;
+  outline-color: invert;
+}
+
+.offset {
+  margin: 30px;
+  background: yellow;
+  border: 1px solid black;
+  outline: 1px solid red;
+  outline-offset: 15px;
+}
+</style>
+</head>
+<body>
+
+<h2>The outline-style Property</h2>
+
+<p class="dotted">A dotted outline</p>
+<p class="dashed">A dashed outline</p>
+<p class="solid">A solid outline</p>
+<p class="double">A double outline</p>
+<p class="groove">A groove outline. The effect depends on the outline-color value.</p>
+<p class="ridge">A ridge outline. The effect depends on the outline-color value.</p>
+<p class="inset">An inset outline. The effect depends on the outline-color value.</p>
+<p class="outset">An outset outline. The effect depends on the outline-color value.</p>
+
+<h2>The outline Property</h2>
+
+<p class="ex1">A thin outline.</p>
+<p class="ex2">A medium outline.</p>
+<p class="ex3">A thick outline.</p>
+<p class="ex4">A 4px thick outline.</p>
+
+<h2>The outline-offset Property</h2>
+
+<p class="offset">This paragraph has an outline of 15px outside the border edge.</p>
+</body>
+</html>
